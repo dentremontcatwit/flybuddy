@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.flybuddy.databinding.FragmentHomeBinding;
+import com.example.flybuddy.databinding.FragmentFriendsBinding;
 
 public class FriendsFragment extends Fragment {
-    private FragmentHomeBinding binding;
+    private FragmentFriendsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         FriendsViewModel friendsViewModel =
                 new ViewModelProvider(this).get(FriendsViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentFriendsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.editTextTextPersonName3;
         friendsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
